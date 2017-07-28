@@ -1,0 +1,98 @@
+<!DOCTYPE>
+<html>
+	<h1>What soccer mom are you?</h1>
+<body>
+ <style>
+   h1 {
+	text-align: center;
+}
+	body {
+	font-size: 22;
+	background-color:#E6F0FF;
+}
+ </style>
+ <script>
+
+function getresults(){
+var linda=0;
+var sharon=0;
+var helen=0;
+
+	  if (document.getElementById("q1_1").checked) {
+	linda = linda + 1;
+	}
+	else if (document.getElementById("q1_2").checked) {
+	sharon = sharon + 1;
+	}
+	else if (document.getElementById("q1_3").checked) {
+	helen = helen + 1;
+	}
+
+	  if (document.getElementById("q2_1").checked) {
+	linda = linda + 1;
+	}
+	else if (document.getElementById("q2_2").checked) {
+	sharon = sharon + 1;
+	}
+	else if (document.getElementById("q2_3").checked) {
+	helen = helen + 1;
+	}
+
+	  if (document.getElementById("q3_1").checked) {
+	linda = linda + 1;
+	}
+	else if (document.getElementById("q3_2").checked) {
+	sharon = sharon + 1;
+	}
+	else if (document.getElementById("q3_3").checked) {
+	helen = helen + 1;
+	}
+
+	  if (document.getElementById("q4_1").checked) {
+	linda = linda + 1;
+	}
+	else if (document.getElementById("q4_2").checked) {
+	sharon = sharon + 1;
+	}
+	else if (document.getElementById("q4_3").checked) {
+	helen = helen + 1;
+	}
+	
+	if (linda > helen && linda > sharon) {
+	alert("You're Linda");
+	}
+	else if (helen > linda && helen > sharon) {
+	alert("You're Helen");
+	}
+	else if (sharon> helen && sharon > linda) {
+	alert("You're Sharon");
+	}
+	else { alert("You tied");
+	}
+}
+</script>
+<center>
+<h3>Are you...</h2>
+ Jealous<input id="q1_1"type="radio" name="q1">
+ Caring<input id="q1_2" type="radio" name="q1">
+ Proud<input id="q1_3" type="radio" name="q1">
+
+<h3>If you had a child, what would their name be?</h2>
+Alan<input id="q2_1"type="radio" name="q2">
+Bruce<input id="q2_2" type="radio" name="q2">
+Brad<input id="q2_3" type="radio" name="q2">
+
+<h3>If they lost a game, what would your reaction be?</h2>
+Angry<input id="q3_1"type="radio" name="q3">
+Reassuring<input id="q3_2" type="radio" name="q3">
+*makes a rude facebook post*<input id="q3_3" type="radio" name="q3">
+
+<h3>Favourite snack?</h2>
+Fruit, in slices<input id="q4_1"type="radio" name="q4">
+Pretzels (made of refined white flour) <input id="q4_2" type="radio" name="q4">
+Crying into a bag of chips<input id="q4_3" type="radio" name="q4">
+<button type="button" onclick="getresults()">Click Me!</button>
+</center>
+
+</body>
+</html>
