@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Occhio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+<script
+  src="http://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+    <script src="jquery.rss.js"></script>
+
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+	body { background-image: url("blue.jpg");
+}
+</style>
+</head>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-blue w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>Occhio</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="portfolio.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
+    <a href="quotes.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Past Quotes</a> 
+    <a href="toparticle.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Top Article</a>
+    <a href="recent.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Recent Articles</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-blue w3-xlarge w3-padding">
+	<h1>Occhio</h1>
+  <h6><a href="javascript:void(0)" class="w3-button w3-blue w3-margin-right" onclick="w3_open()">Menu</a></h6>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="occhio">
+    <br>
+	<br>
+
+
+    <h2 class="w3-text-blue"><b>About Occhio</b></h2>
+    <hr style="width:300px;border:1px solid blue" class="w3-round">
+	<p> Occhiolism- <i>n.</i> the awareness of the smallness of your perspective, by which you couldn't possibly draw any meaningful conclusions at all, about the world or the past or the complexities of culture, because although your life is an epic and unrepeatable anecdote, it still only has a sample size of one, and may end up being the control for a much wilder experiment happening in the next room. </p>
+
+
+
+    <h2 class="w3-text-blue"><b>Quote o' the Week</b></h2>
+    <hr style="width:300px;border:1px solid blue" class="w3-round">
+	<p> <i>"In our age there is no such thing as 'keeping out of politics.' All issues are political issues, and politics itself is a mass of lies, evasions, folly, hatred and schizophrenia."</i> -George Orwell<a href="https://www.brainyquote.com/quotes/keywords/political.html"> <sup>1</sup> </a>
+		</p>
+  </div>
+
+  <div class="w3-container" id="toparticle" style="margin-top:75px">
+    <h2 class="w3-text-blue"><b>Top Article</b></h2>
+    <hr style="width:300px;border:1px solid blue "class="w3-round">
+<ul>
+	<li></li>
+</ul>
+  </div>
+
+
+<script>
+      jQuery(function($) {
+        $("#rss-feeds").rss("http://www.nytimes.com/services/xml/rss/nyt/Politics.xml",
+ 	{
+        
+	entryTemplate:'<h3>{title}</h3><h6>{date}</h6><h4>{shortBody}</h4>'
+      })
+      })
+
+    </script>
+  <div class="w3-container" id="recent" style="margin-top:75px">
+    <h2 class="w3-text-blue"><b>Recent Articles</b></h2>
+      <hr style="width:300px;border:1px solid blue" class="w3-round">
+	</div>
+<div id="rss-feeds">
+</div>
+
+
+
+<!-- End page content -->
+
+</div>
+
+<!-- W3.CSS Container -->
+<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></p></div>
+
+<script>
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+
+</script>
+
+</body>
+</html>
