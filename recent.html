@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html>
+<head>
 <title>Occhio</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+<script
+  src="http://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+    <script src="jquery.rss.js"></script>
+
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
 body {font-size:16px;}
-.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
-.w3-half img:hover{opacity:1}
-body { background-image: url("blue.jpg");
+	body { background-image: url("blue.jpg");
 }
 </style>
+</head>
 <body>
 
 <!-- Sidebar/menu -->
@@ -22,15 +31,17 @@ body { background-image: url("blue.jpg");
     <h3 class="w3-padding-64"><b>Occhio</b></h3>
   </div>
   <div class="w3-bar-block">
- <a href="portfolio.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
+    <a href="portfolio.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
     <a href="quotes.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Past Quotes</a> 
-    <a href="toparticle.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Top Article</a>
+    <a href="toparticle.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Media</a>
     <a href="recent.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Recent Articles</a>
- </div>
+    <a href="archive.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Archive</a>
+  </div>
 </nav>
 
 <!-- Top menu on small screens -->
 <header class="w3-container w3-top w3-hide-large w3-blue w3-xlarge w3-padding">
+	<h1>Occhio</h1>
   <h6><a href="javascript:void(0)" class="w3-button w3-blue w3-margin-right" onclick="w3_open()">Menu</a></h6>
 </header>
 
@@ -38,16 +49,36 @@ body { background-image: url("blue.jpg");
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="occhio">
+    <br>
+	<br>
+
+<script>
+      jQuery(function($) {
+        $("#rss-feeds").rss("http://www.nytimes.com/services/xml/rss/nyt/Politics.xml",
+ 	{
+        
+	entryTemplate:'<h3><a href="{url}">{title}</a></h3> <h6>{date}</h6><h5>{shortBody}</h5>'
+      })
+      })
+
+    </script>
+  <div class="w3-container" id="recent" style="margin-top:75px">
+    <h2 class="w3-text-blue"><b>Happening Now</b></h2>
+      <hr style="width:300px;border:1px solid blue" class="w3-round">
+	</div>
+<div id="rss-feeds">
+</div>
+
 
 <!-- End page content -->
 
 </div>
 
-<!-- W3.CSS Container -->
-<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></p></div>
-
 <script>
-// Script to open and close sidebar
 function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
     document.getElementById("myOverlay").style.display = "block";

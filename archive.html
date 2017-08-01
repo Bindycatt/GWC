@@ -1,27 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>
 <title>Occhio</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 
-<script
-  src="http://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
-    <script src="jquery.rss.js"></script>
-
 <style>
+
 body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
 body {font-size:16px;}
-	body { background-image: url("blue.jpg");
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+body { background-image: url("blue.jpg");
 }
 </style>
-</head>
 <body>
 
 <!-- Sidebar/menu -->
@@ -31,37 +24,45 @@ body {font-size:16px;}
     <h3 class="w3-padding-64"><b>Occhio</b></h3>
   </div>
   <div class="w3-bar-block">
-    <a href="portfolio.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
+ <a href="portfolio.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
     <a href="quotes.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Past Quotes</a> 
     <a href="toparticle.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Media</a>
     <a href="recent.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Recent Articles</a>
     <a href="archive.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Archive</a>
-  </div>
+ </div>
 </nav>
 
 <!-- Top menu on small screens -->
 <header class="w3-container w3-top w3-hide-large w3-blue w3-xlarge w3-padding">
-	<h1>Occhio</h1>
   <h6><a href="javascript:void(0)" class="w3-button w3-blue w3-margin-right" onclick="w3_open()">Menu</a></h6>
 </header>
 
 <!-- Overlay effect when opening sidebar on small screens -->
+
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:340px;margin-right:40px">
-<br><br><br><br><br><br>
-<ul>
-	<li><p> <i>"In our age there is no such thing as 'keeping out of politics.' All issues are political issues, and politics itself is a mass of lies, evasions, folly, hatred and schizophrenia."</i> -George Orwell<a href="https://www.brainyquote.com/quotes/keywords/political.html"> <sup>1</sup> </a>
-		</p> </li>
-</ul>
-</div>
+<br><br><br><br><br>
+<h3> <b>National Archives</b> </h3>
+	<p> <a href="https://www.archives.gov/">National Archives</a> is a site used to
+explore US history with documents, photos, and records. You can also request military records,
+or plan a trip to a museum.
+		</p>
 
+<h3> <b>Politifact</b> </h3>
+	<p> <a href="http://www.politifact.com/">Politifact</a> helps you fact-check
+what you know of US politics.
+		</p>
+
+<h3> <b> </b> </h3>
+</div>
 <!-- End page content -->
 
 </div>
 
 <script>
+// Script to open and close sidebar
 function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
     document.getElementById("myOverlay").style.display = "block";
