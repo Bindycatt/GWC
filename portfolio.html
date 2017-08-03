@@ -13,6 +13,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
     <script src="jquery.rss.js"></script>
     <script src="wnep.rss.js"></script>
+    <script src="washington.rss.js"></script>
+    <script src="politico.rss.js"></script>
 
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
@@ -33,7 +35,8 @@ body {font-size:16px;}
     <a href="portfolio.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
     <a href="quotes.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Past Quotes</a> 
     <a href="toparticle.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Media</a>
-    <a href="recent.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Recent Articles</a>
+    <a href="recent.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Our Voice</a>
+    <a href="quiz.html" onclick="w3_clock()" class="w3-bar-item w3-button w3-hover-white">Quizzes</a>
     <a href="archive.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Archive</a>
   </div>
 </nav>
@@ -56,9 +59,9 @@ body {font-size:16px;}
 	<br>
 
 
-    <h2 class="w3-text-blue"><b>About Occhio</b></h2>
+    <h2 class="w3-text-blue"><b>Who Are We?</b></h2>
     <hr style="width:300px;border:1px solid blue" class="w3-round">
-	<p> Welcome! We're just a couple of losers who decided to make a website. Enjoy.
+	<p>We're just a couple of teenagers hoping to normalize US politics and educate people about their nation.
 		</p>
 
 
@@ -72,9 +75,12 @@ body {font-size:16px;}
   <div class="w3-container" id="toparticle" style="margin-top:75px">
     <h2 class="w3-text-blue"><b>Top News</b></h2>
     <hr style="width:300px;border:1px solid blue "class="w3-round">
-<div id="rss-feeds">
-</div>
-
+	<h3 class="w3-text-blue">The New York Times </h3>
+<div id="rss-feeds"></div>
+	<h3 class="w3-text-blue">The Washington Post</h3>
+<div id="rss-feeds3"></div>
+	<h3 class="w3-text-blue">Politico</h3>
+<div id="rss-feeds4"></div>
   </div>
 
 
@@ -83,11 +89,11 @@ body {font-size:16px;}
       <hr style="width:300px;border:1px solid blue" class="w3-round">
 <div id="rss-feeds2"></div>
 
-	</div>
+
 
 <script>
       jQuery(function($) {
-        $("#rss-feeds").rss("http://www.nytimes.com/services/xml/rss/nyt/Politics.xml",
+        $("#rss-feeds").rss("https://www.nytimes.com/services/xml/rss/nyt/Politics.xml",
  	{
         
 	entryTemplate:'<h3><a href="{url}">{title}</a></h3> <h6>{date}</h6><h5>{shortBody}</h5>'
@@ -97,7 +103,7 @@ body {font-size:16px;}
     </script>
 <script>
       jQuery(function($) {
-        $("#rss-feeds2").rss("http://wnep.com/feed/",
+        $("#rss-feeds2").rss("https://wnep.com/feed/",
  	{
         
 	entryTemplate:'<h3><a href="{url}">{title}</a></h3> <h6>{date}</h6><h5>{shortBody}</h5>'
@@ -105,6 +111,27 @@ body {font-size:16px;}
       })
 
     </script>
+<script>
+      jQuery(function($) {
+        $("#rss-feeds3").rss("http://feeds.washingtonpost.com/rss/rss_election-2012",
+ 	{
+        
+	entryTemplate:'<h3><a href="{url}">{title}</a></h3> <h6>{date}</h6><h5>{shortBody}</h5>'
+      })
+      })
+
+    </script>
+<script>
+      jQuery(function($) {
+        $("#rss-feeds4").rss("http://www.politico.com/rss/politics08.xml",
+ 	{
+        
+	entryTemplate:'<h3><a href="{url}">{title}</a></h3> <h6>{date}</h6><h5>{shortBody}</h5>'
+      })
+      })
+
+    </script>
+
 <!-- End page content -->
 
 </div>

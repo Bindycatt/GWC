@@ -1,98 +1,185 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
-	<h1>What soccer mom are you?</h1>
+<head>
+<title>Occhio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+<script
+  src="http://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+    <script src="jquery.rss.js"></script>
+
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+	body { background-image: url("blue.jpg");
+}
+</style>
+</head>
 <body>
- <style>
-   h1 {
-	text-align: center;
-}
-	body {
-	font-size: 22;
-	background-color:#E6F0FF;
-}
- </style>
- <script>
 
-function getresults(){
-var linda=0;
-var sharon=0;
-var helen=0;
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-blue w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>Occhio</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="portfolio.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
+    <a href="quotes.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Past Quotes</a> 
+    <a href="toparticle.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Media</a>
+    <a href="recent.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Our Voice</a>
+    <a href="quiz.html" onclick="w3_clock()" class="w3-bar-item w3-button w3-hover-white">Quizzes</a>
+    <a href="archive.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Archive</a>
+  </div>
+</nav>
 
-	  if (document.getElementById("q1_1").checked) {
-	linda = linda + 1;
-	}
-	else if (document.getElementById("q1_2").checked) {
-	sharon = sharon + 1;
-	}
-	else if (document.getElementById("q1_3").checked) {
-	helen = helen + 1;
-	}
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-blue w3-xlarge w3-padding">
+	<h1>Occhio</h1>
+  <h6><a href="javascript:void(0)" class="w3-button w3-blue w3-margin-right" onclick="w3_open()">Menu</a></h6>
+</header>
 
-	  if (document.getElementById("q2_1").checked) {
-	linda = linda + 1;
-	}
-	else if (document.getElementById("q2_2").checked) {
-	sharon = sharon + 1;
-	}
-	else if (document.getElementById("q2_3").checked) {
-	helen = helen + 1;
-	}
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-	  if (document.getElementById("q3_1").checked) {
-	linda = linda + 1;
-	}
-	else if (document.getElementById("q3_2").checked) {
-	sharon = sharon + 1;
-	}
-	else if (document.getElementById("q3_3").checked) {
-	helen = helen + 1;
-	}
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+<br><br><br><br><br><br>
 
-	  if (document.getElementById("q4_1").checked) {
-	linda = linda + 1;
-	}
-	else if (document.getElementById("q4_2").checked) {
-	sharon = sharon + 1;
-	}
-	else if (document.getElementById("q4_3").checked) {
-	helen = helen + 1;
-	}
+
+<h1>What Party Do You Belong To?</h1>
+<h3> <i>1. How would you describe yourself?</i> </h3>
+Traditional<input name="q1" type="radio" id="q1_1">
+<br>Open-minded<input name="q1" type="radio" id="q1_2">
+<br>Unbiased<input name="q1" type="radio" id="q1_3">
 	
-	if (linda > helen && linda > sharon) {
-	alert("You're Linda");
+<h3> <i>2. What are some of your core beliefs?</i> </h3>
+Family values<input name="q2" type="radio" id="q2_1">
+<br>Political Correctness<input name="q2" type="radio" id="q2_2">
+<br>Equality<input name="q2" type="radio" id="q2_3">
+
+<h3> <i>3. What is your stance on immigration?</i> </h3>
+Control<input name="q3" type="radio" id="q3_1">
+<br>Help refugees<input name="q3" type="radio" id="q3_2">
+<br>No stance<input name="q3" type="radio" id="q3_3">
+
+<h3> <i>4. How do you see your president?</i> </h3>
+Uncensored<input name="q4" type="radio" id="q4_1">
+<br>Traditional<input name="q4" type="radio" id="q4_2">
+<br>Unconventional<input name="q4" type="radio" id="q4_3">
+
+<h3> <i> Which "side" are you on? </i> </h3>
+Conservative<input name="q5" type="radio" id="q5_1">
+<br>Liberal<input name="q5" type="radio" id="q5_2">
+<br>Neither<input name="q5" type="radio" id="q5_3">
+
+
+<script>
+function getAnswer(){
+var rep= 0;
+var dem= 0;
+var thr= 0;
+
+
+	if (document.getElementById("q1_1").checked){
+		rep = rep + 1;
+	} else if (document.getElementById("q1_2").checked){
+		dem = dem + 1; thr = thr + 1;
+	} else if (document.getElementById("q1_3").checked){
+		thr = thr + 1;
 	}
-	else if (helen > linda && helen > sharon) {
-	alert("You're Helen");
+
+
+	if (document.getElementById("q2_1").checked) {
+		rep = rep + 1;
+	} else if (document.getElementById("q2_2").checked){
+		dem = dem + 1;
+	} else if (document.getElementById("q2_3").checked){
+		dem = dem + 1; thr = thr + 1;
 	}
-	else if (sharon> helen && sharon > linda) {
-	alert("You're Sharon");
+
+
+	if (document.getElementById("q3_1").checked){
+		rep = rep + 1; thr = thr + 1
+	} else if (document.getElementById("q3_2").checked){
+		dem = dem + 1; thr = thr + 1
+	} else if (document.getElementById("q3_3").checked){
+		thr = thr + 1;
+	} 
+
+
+	if (document.getElementById("q4_1").checked){
+		rep = rep + 1; thr = thr + 1;
+	} else if (document.getElementById("q4_2").checked){
+		dem = dem + 1; rep = rep + 1;
+	} else if (document.getElementById("q4_3").checked){
+		rep = rep + 1; thr = thr + 1;
 	}
-	else { alert("You tied");
+
+	if (document.getElementById("q5_1").checked){
+		rep = rep + 1; thr = thr + 1;
+	} else if (document.getElementById("q5_2").checked){
+		dem = dem + 1; thr = thr + 1;
+	} else if (document.getElementById("q5_3").checked){
+		thr = thr + 1;
+	}
+
+
+	if (rep>dem && rep>thr){
+		document.getElementById("pic").src= "replogo.png"
+		document.getElementById("pic").style.display= "inline"
+	} else if (dem>rep && dem>thr){
+		document.getElementById("pic").src= "demlogo.png"
+		document.getElementById("pic").style.display= "inline"
+	} else if (thr>dem && thr>rep){
+		document.getElementById("pic").src= "thrlogo.gif"
+		document.getElementById("pic").style.display= "inline"
+	} else if (thr==rep){
+		document.getElementById("pic").src= "what.png"
+		document.getElementById("pic").style.display= "inline"
+	} else if (dem==thr){
+		document.getElementById("pic").src= "what.png"
+		document.getElementById("pic").style.display= "inline"
+	} else if (rep==dem){
+		document.getElementById("pic").src= "what.png"
+		document.getElementById("pic").style.display= "inline"	
+	} else {
+		alert ("No Answers Given/Tie")
 	}
 }
 </script>
+
+<br><button onclick="getAnswer()">Answer</button>
+
 <center>
-<h3>Are you...</h2>
- Jealous<input id="q1_1"type="radio" name="q1">
- Caring<input id="q1_2" type="radio" name="q1">
- Proud<input id="q1_3" type="radio" name="q1">
-
-<h3>If you had a child, what would their name be?</h2>
-Alan<input id="q2_1"type="radio" name="q2">
-Bruce<input id="q2_2" type="radio" name="q2">
-Brad<input id="q2_3" type="radio" name="q2">
-
-<h3>If they lost a game, what would your reaction be?</h2>
-Angry<input id="q3_1"type="radio" name="q3">
-Reassuring<input id="q3_2" type="radio" name="q3">
-*makes a rude facebook post*<input id="q3_3" type="radio" name="q3">
-
-<h3>Favourite snack?</h2>
-Fruit, in slices<input id="q4_1"type="radio" name="q4">
-Pretzels (made of refined white flour) <input id="q4_2" type="radio" name="q4">
-Crying into a bag of chips<input id="q4_3" type="radio" name="q4">
-<button type="button" onclick="getresults()">Click Me!</button>
+<img src="replogo.png" width="200" length="250" style="display:none" id="pic">
 </center>
+
+
+
+<!-- End page content -->
+
+</div>
+
+<script>
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+
+</script>
 
 </body>
 </html>
