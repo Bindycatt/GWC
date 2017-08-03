@@ -14,6 +14,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
     <script src="jquery.rss.js"></script>
+    <script src="blogger.rss.js"></script>
 
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
@@ -23,6 +24,22 @@ body {font-size:16px;}
 </style>
 </head>
 <body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=332495943863283";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script><div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=332495943863283";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-blue w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
@@ -34,7 +51,8 @@ body {font-size:16px;}
     <a href="portfolio.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
     <a href="quotes.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Past Quotes</a> 
     <a href="toparticle.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Media</a>
-    <a href="recent.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Recent Articles</a>
+    <a href="recent.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Our Voice</a>
+    <a href="quiz.html" onclick="w3_clock()" class="w3-bar-item w3-button w3-hover-white">Quizzes</a>
     <a href="archive.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Archive</a>
   </div>
 </nav>
@@ -56,23 +74,24 @@ body {font-size:16px;}
     <br>
 	<br>
 
-<script>
-      jQuery(function($) {
-        $("#rss-feeds").rss("http://www.nytimes.com/services/xml/rss/nyt/Politics.xml",
- 	{
-        
-	entryTemplate:'<h3><a href="{url}">{title}</a></h3> <h6>{date}</h6><h5>{shortBody}</h5>'
-      })
-      })
 
-    </script>
+
+
+<div class="w3-container" id="recent" style="margin-top:75px">
+
+
+
   <div class="w3-container" id="recent" style="margin-top:75px">
-    <h2 class="w3-text-blue"><b>Happening Now</b></h2>
+    <h2 class="w3-text-blue"><b>Our Voice</b></h2>
       <hr style="width:300px;border:1px solid blue" class="w3-round">
 	</div>
-<div id="rss-feeds">
-</div>
+		<h3><i> Ari </i></h3>
+			Hello! My name is Ari and I'm seventeen-years-old, a senior in high school. I wanted to make a website normalizing politics in order to get our generation more involved in their nation.
 
+		<h3><i> Lauren </i></h3>
+			Hi I'm Lauren and I'm fourteen, a freshman in highschool. I feel like no one listens to millenials or even blames them for the problems that baby boomers caused, so I went with Ari's idea.
+
+<center> <div class="fb-comments" data-href="https://bindycatt.github.io/GWC/recent.html" data-numposts="5"></div> </center>
 
 <!-- End page content -->
 
